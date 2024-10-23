@@ -68,7 +68,7 @@ function init() {
       ball.position.x = paddle.position.x ;
       ball.position.z = paddle.position.z - paddleR*2;
     }
-
+    //paddle.position.x = ball.position.x;
   }
 
   // ボールの死活
@@ -158,6 +158,7 @@ function init() {
       */
       
       stopBall();
+      //life--;
       /*
       */
     }
@@ -303,6 +304,9 @@ function init() {
           brick.visible = false;
           nBrick--;
           score += (Math.abs(brick.position.z)/0.7+1)*100;
+          if(nBrick <= 0){
+            score += 5000;
+          }
           vz = -vz;
         }
       }
